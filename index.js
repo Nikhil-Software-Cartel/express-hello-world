@@ -18,7 +18,7 @@ let worker_name = Math.random().toString(36).substring(7);
 app.get('/', function (req, res) {
     // wait for 100 ms
     setTimeout(function () {
-        console.log(worker_name, fibonacci(42));
+        console.log(worker_name, fibonacci(41));
         res.send('Hello From Express!');
     }, 1000);
 });
