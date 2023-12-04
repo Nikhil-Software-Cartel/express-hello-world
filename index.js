@@ -2,12 +2,12 @@ var express = require('express');
 const rateLimit = require('express-rate-limit');
 
 var app = express();
-app.use(
-    rateLimit({
-        windowMs: 60000, // 1 minute
-        max: 10, // 10 requests per minute
-    })
-);
+// app.use(
+//     rateLimit({
+//         windowMs: 60000, // 1 minute
+//         max: 10, // 10 requests per minute
+//     })
+// );
 let worker_name = Math.random().toString(36).substring(7);
 app.get('/', function (req, res) {
     // wait for 100 ms
