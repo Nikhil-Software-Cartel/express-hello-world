@@ -1,6 +1,12 @@
 var express = require('express');
 const rateLimit = require('express-rate-limit');
-
+function fibonacci(n) {
+    if (n === 0 || n === 1) {
+        return n;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
 var app = express();
 // app.use(
 //     rateLimit({
@@ -12,7 +18,7 @@ let worker_name = Math.random().toString(36).substring(7);
 app.get('/', function (req, res) {
     // wait for 100 ms
     setTimeout(function () {
-        console.log(worker_name);
+        console.log(worker_name, fibonacci(42));
         res.send('Hello From Express!');
     }, 1000);
 });
