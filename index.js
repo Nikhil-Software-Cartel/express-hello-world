@@ -6,7 +6,7 @@ app.get('/', function (req, res) {
     setTimeout(function () {
         console.log(worker_name);
         res.send('Hello From Express!');
-    }, 100);
+    }, 1000);
 });
 app.listen(3000, function () {
     console.log('Listening on port 3000...');
